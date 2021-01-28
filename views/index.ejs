@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>COVID19 Dashboard</title>
+    <link rel="stylesheet" href="/main.css">
+</head>
+<body>
+    <div class="container">
+        <img src="./image.jpg" alt="" width="300">
+        <h1>COVID19 Dashboard</h1>
+       
+        <table>
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Cases</th>
+                    <th>Active</th>
+                    <th>Recovered</th>
+                    <th>Deaths</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr>
+                    <td>Global</td>
+                    <td><%= (typeof cases != "undefined" ? cases : "") %></td>
+                    <td><%= (typeof active != "undefined" ? active : "") %></td>
+                    <td><%= (typeof recovered != "undefined" ? recovered : "") %></td>
+                    <td><%= (typeof deaths != "undefined" ? deaths : "") %></td>
+                </tr>
+                <% for (const country of countries) { %>
+                    <tr>
+                        <td><%= country.country %></td>
+                        <td><%= country.cases %></td>
+                        <td><%= country.active %></td>
+                        <td><%= country.recovered %></td>
+                        <td><%= country.deaths %></td>
+                    </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+    
+</body>
+</html>
