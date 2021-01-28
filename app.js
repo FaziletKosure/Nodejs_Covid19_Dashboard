@@ -3,6 +3,8 @@ const api=require('novelcovid')
 
 const app=express()
 
+const port = process.env.PORT || 8080
+
 
 app.set('views','./views');
 app.set('view engine','ejs');
@@ -14,4 +16,4 @@ app.get('/*',async(req,res)=>{
     res.render('index',{global,countries});
 })
 
-app.listen(8080,()=>console.log('running on port 8080'))
+app.listen(port,()=>console.log('running on port 8080'))
