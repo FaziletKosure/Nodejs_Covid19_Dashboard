@@ -9,9 +9,9 @@
 </head>
 <body>
     <div class="container">
-        <a class="nav-item nav-link active" href="/yesterday">Daily</span></a>
         <img src="./image.jpg" alt="" width="300">
-        <h1>COVID19 Dashboard--Total</h1>
+        <h1>COVID19 Dashboard-Daily</h1>
+        <a class="nav-item nav-link active" href="/">Home</span></a>
        
         <table>
             <thead>
@@ -32,13 +32,13 @@
                     <td><%= (typeof recovered != "undefined" ? recovered : "") %></td>
                     <td><%= (typeof deaths != "undefined" ? deaths : "") %></td>
                 </tr>
-                <% for (const country of countries) { %>
+                <% for (const yescountry of yescountries) { %>
                     <tr>
-                        <td><%= country.country %></td>
-                        <td><%= country.cases %></td>
-                        <td><%= country.active %></td>
-                        <td><%= country.recovered %></td>
-                        <td><%= country.deaths %></td>
+                        <td><%= yescountry.country %></td>
+                        <td><%=yescountry.todayCases %></td>
+                        <td><%= yescountry.active%></td>
+                        <td><%= yescountry.todayRecovered %></td>
+                        <td><%= yescountry.todayDeaths %></td>
                     </tr>
                 <% } %>
             </tbody>
