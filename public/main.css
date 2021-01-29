@@ -4,8 +4,33 @@ body {
   font-family: "Lucida Sans", Geneva, Verdana, sans-serif;
 }
 
+.button {
+  box-shadow: 0px 10px 14px -7px #1e7e8f;
+  background: linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+  background-color: #599bb3;
+  border-radius: 8px;
+  display: inline-block;
+  cursor: pointer;
+  color: #ffffff;
+  font-family: Arial;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 13px 30px;
+  text-decoration: none;
+  text-shadow: 0px 1px 0px #3d768a;
+  margin: 10px;
+}
+.button:hover {
+  background: linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+  background-color: #408c99;
+}
+.button:active {
+  position: relative;
+  top: 1px;
+}
+
 .container {
-  box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
   width: 700px;
   text-align: center;
   margin: 0 auto;
@@ -37,7 +62,8 @@ th {
   position: sticky;
   top: 0;
   box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.4);
-  background: rgba(0, 0, 0, 0.8);
+  /* background: rgba(0, 0, 0, 0.8); */
+  background: rgb(70, 130, 180, 0.8);
   color: #fff;
 }
 
