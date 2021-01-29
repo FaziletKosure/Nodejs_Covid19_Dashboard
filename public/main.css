@@ -11,15 +11,12 @@ body {
   margin: 0 auto;
   padding: 25px 0 0 0;
 }
-/* thead {
-  position: fixed;
-  left: 120px;
-} */
+
 th {
   margin: 20px;
 }
 table {
-  /* margin: auto; */
+  margin: auto;
   text-align: left;
   position: relative;
   border-collapse: collapse;
