@@ -22,4 +22,15 @@ app.get('/yesterday',async(req,res)=>{
     res.render('yesterday',{yesglobal,yescountries});
 })
 
+app.get('/chart',async(req,res)=>{
+    const mobilityData= await api.historical.countries({country:'belgium',days:7})
+    const dates=Object.keys(mobilityData.timeline.cases)
+    const daethsDates=Object.keys(mobilityData.timeline.deaths)
+    const data=Object.values(mobilityData.timeline.cases)
+    const deathsData=Object.values(mobilityData.timeline.deaths)
+    console.log(deathsData)
+    // const yescountries= await api.yesterday.countries({sort:'cases'}).then(concole.log)
+    res.render('chart',{dates,data,daethsDates,deathsData});
+})
+
 app.listen(port,()=>console.log('running on port 8080'))
