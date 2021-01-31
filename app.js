@@ -27,8 +27,7 @@ app.get('/yesterday',async(req,res)=>{
     res.render('yesterday',{yesglobal,yescountries});
 })
 app.post('/chart', (req, res) => {
-//    return res.send(`Full name is:${req.body.country}.`);
- var cntry=(req.body.country).toLowerCase()
+ const cntry=(req.body.country).toLowerCase()
    console.log(cntry)
    res.redirect('/chart')
    localStorage.setItem('myFirstKey', cntry)
@@ -48,7 +47,7 @@ const deathsData=Object.values(x ? locData.timeline.deaths : mobilityData.timeli
     console.log(deathsData)
     console.log(localStorage.getItem('myFirstKey'))
     // localStorage.clear();
-    // const yescountries= await api.yesterday.countries({sort:'cases'}).then(concole.log)
+    
     res.render('chart',{dates,data,daethsDates,deathsData});
 })
 
