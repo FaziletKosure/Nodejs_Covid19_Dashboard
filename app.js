@@ -15,6 +15,16 @@ app.set('views','./views');
 app.set('view engine','ejs');
 app.use(express.static('./public'));
 
+
+app.post('/yesterday', (req, res) => {
+    const cntry=(req.body.filter_cntry)
+      console.log(cntry)
+      res.redirect('/yesterday')
+    localStorage.setItem('filterCntry', cntry)
+      
+    //   res.render('yesterday',{cntry});
+     });
+
 app.get('/',async(req,res)=>{
     const global= await api.all();
     const countries= await api.countries({sort:'cases'})
@@ -22,9 +32,10 @@ app.get('/',async(req,res)=>{
 })
 
 app.get('/yesterday',async(req,res)=>{
+    const x=localStorage.getItem('filterCntry')
     const yesglobal= await api.yesterday.all();
     const yescountries= await api.yesterday.countries({sort:'cases'})
-    res.render('yesterday',{yesglobal,yescountries});
+    res.render('yesterday',{yesglobal,yescountries,x});
 })
 app.post('/chart', (req, res) => {
  const cntry=(req.body.country).toLowerCase()
