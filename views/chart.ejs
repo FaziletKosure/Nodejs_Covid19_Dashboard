@@ -43,6 +43,7 @@
     var label = '<%- JSON.stringify(dates) %>';
     var dataset = '<%- JSON.stringify(data) %>';
     var deathsData = '<%- JSON.stringify(deathsData) %>';
+    var country ='<%= (typeof x != "undefined" ? x : country)%>';  
     var myChart = new Chart(ctx, {
     
         type: 'bar',
@@ -99,7 +100,7 @@
             },
             title: {
 						display: true,
-						text: 'Chart.js Line Chart - Animation Progress Bar'
+						text:`Covid19 Cases and Deaths of ${country.toUpperCase()}`
 					},
             indexAxis: 'y',
             events: ['click'],

@@ -44,12 +44,13 @@ const dates=Object.keys(x ? locData.timeline.cases : mobilityData.timeline.cases
 const daethsDates=Object.keys(x ? locData.timeline.deaths : mobilityData.timeline.deaths)
 const data=Object.values(x ? locData.timeline.cases : mobilityData.timeline.cases)
 const deathsData=Object.values(x ? locData.timeline.deaths : mobilityData.timeline.deaths)
-
+const country=mobilityData.country
     console.log(deathsData)
+    console.log(mobilityData.country)
     console.log(localStorage.getItem('myFirstKey'))
     // localStorage.clear();
     
-    res.render('chart',{dates,data,daethsDates,deathsData,x,});
+    res.render('chart',{dates,data,daethsDates,deathsData,x,country});
 })
 
 app.listen(port,()=>console.log('running on port 8080'))
