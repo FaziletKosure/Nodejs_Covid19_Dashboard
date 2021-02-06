@@ -60,37 +60,17 @@
                     <td><%= (typeof recovered != "undefined" ? recovered : "") %></td>
                     <td><%= (typeof deaths != "undefined" ? deaths : "") %></td>
                 </tr>
-                <!-- <%-JSON.stringify(x)%>
-               
-
-                <%-JSON.stringify(yescountries.country)%> -->
+              
                 
                 <% for (const yescountry of yescountries) { %>
-                    <!-- <%-JSON.stringify(yescountry.country)%> -->
-                    <% if( x ){ %>
-                        <tr>
-                            <td><%= yescountry.country %></td>
-                            <td><%=yescountry.todayCases %></td>
-                            <td><%= yescountry.active%></td>
-                            <td><%= yescountry.todayRecovered %></td>
-                            <td><%= yescountry.todayDeaths %></td>
-                        </tr>
-                      <% } else{ %>  
-                        <tr>
-                            <td><%= yescountry.country %></td>
-                            <td><%=yescountry.todayCases %></td>
-                            <td><%= yescountry.active%></td>
-                            <td><%= yescountry.todayRecovered %></td>
-                            <td><%= yescountry.todayDeaths %></td>
-                        </tr>
-                     <% } %>
-                    <!-- <tr>
+                  
+                    <tr>
                         <td><%= yescountry.country %></td>
                         <td><%=yescountry.todayCases %></td>
                         <td><%= yescountry.active%></td>
                         <td><%= yescountry.todayRecovered %></td>
                         <td><%= yescountry.todayDeaths %></td>
-                    </tr> -->
+                    </tr>
                 <% } %>
             </tbody>
         </table>
