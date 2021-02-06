@@ -27,6 +27,7 @@ app.post('/yesterday', (req, res) => {
 
 app.get('/',async(req,res)=>{
     const global= await api.all();
+    console.log(global)
     const countries= await api.countries({sort:'cases'})
     res.render('index',{global,countries});
 })
